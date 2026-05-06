@@ -1,0 +1,28 @@
+experiment_name: rl_ppo_oval
+track: oval
+
+algorithms:
+  - name: ppo
+    params:
+      obs_dim: 32
+      action_dim: 2
+      hidden_dim: 256
+      lr_actor: 0.0003
+      lr_critic: 0.001
+      gamma: 0.99
+      clip_eps: 0.2
+      n_epochs: 10
+
+episodes: 500
+seed: 0
+render: false
+output_dir: runs/rl_ppo
+
+simulator:
+  dt: 0.05
+  max_steps: 5000
+
+metrics:
+  - reward_curve
+  - lap_time
+  - path_length
